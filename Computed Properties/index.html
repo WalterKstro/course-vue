@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Vuejs</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body>
+	<div id="app">
+		<div class="row mt-2">
+			<div class="col-4">
+				<h3>Tareas con prioridad</h3>
+				<ul>
+					<li v-for="task in filterTaskByPriority">
+						{{ task.name }} - {{task.priory}}
+					</li>
+				</ul>
+			</div>
+			<div class="col-4">
+				<h3>Tareas sin prioridad</h3>
+				<ul>
+					<li v-for="task in filterTaskOutPriority">
+						{{ task.name }} - {{task.priory}}
+					</li>
+				</ul>
+			</div>
+			<div class="col-4">
+				<h3>Original</h3>
+				<ul>
+					<li v-for="task in filterTaskByDuration">
+						{{ task.name }} - {{task.time}}
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- <h3>{{reverseString}}</h3> -->
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="script.js"></script>
+</body>
+
+</html>

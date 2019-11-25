@@ -5,3 +5,4 @@
 * Introduccion
 * Renderizado de Listas
 * Eventos
+* Computed Properties
