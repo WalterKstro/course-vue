@@ -6,3 +6,4 @@
 * Renderizado de Listas
 * Eventos
 * Computed Properties
+* Filtros
