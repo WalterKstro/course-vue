@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vuejs</title>
+</head>
+<body>
+	<div id="app">
+		<h3 v-if="condicional">Bienvenido: <strong> Walter </strong></h3>
+		<template v-else>
+			<h4>Necesitas una cuenta para ver el contenido <a href="#">Registro</a></h4>
+		</template>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="script.js"></script>
+</body>
+</html>

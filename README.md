@@ -3,6 +3,7 @@
 ## Contenido
 
 * Introduccion
+* Directivas
 * Renderizado de Listas
 * Eventos
 * Computed Properties
