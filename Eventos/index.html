@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vuejs</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+	<div id="app">
+		<div class="container">
+			<div class="row">
+				<div class="col-4">
+					<form v-on:submit.prevent="addTaskOnList">
+						<input type="text" class="form-control my-2" placeholder="Ingrese su tarea" v-model="task">
+						<!-- <button class="btn btn-info">Agregar Tarea</button> -->
+					</form>
+				</div>
+				<div class="col-4">
+					<ul>
+						<li v-for="task in homeworks">
+							{{ task }}
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="script.js"></script>
+</body>
+</html>
