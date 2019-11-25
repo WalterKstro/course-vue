@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vuejs</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+	<div id="app">
+		<div class="container">
+			<div class="row">
+				<div class="col-4">
+					<ul>
+						<li v-for="(dia,key) in dias" :key="key">{{dia}}</li>
+					</ul>
+				</div>
+				<div class="col-4">
+					<ul v-for="(tarea,key) in tareas" :key="tarea.id">
+						{{key }} - {{ tarea.tarea }}
+					</ul>
+				</div>
+				<div class="col-4">
+					<ul v-for="(value,name ) in persona">
+						{{ name.toUpperCase() }}: {{ value }}
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="script.js"></script>
+</body>
+</html>
