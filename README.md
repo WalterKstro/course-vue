@@ -8,3 +8,4 @@
 * Eventos
 * Computed Properties
 * Filtros
+* DataBinding Atributos
