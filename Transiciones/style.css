@@ -1,0 +1,65 @@
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.circle {
+	background-color: #ddd;
+	border-radius: 50%;
+}
+
+/* Transition */
+.ball-enter {
+	width: 200px;
+	height: 200px;
+	transform: scale(0) translateX(0);
+}
+
+.ball-enter-to {
+	width: 200px;
+	height: 200px;
+	transform: scale(1) translateX(900px);
+	transition: transform 5s;
+}
+
+.ball-leave {
+	width: 200px;
+	height: 200px;
+	transform: scale(1) translateX(900px);
+}
+
+.ball-leave-to {
+	width: 200px;
+	height: 200px;
+	transform: scale(0) translateX(0);
+	transition: transform 5s;
+}
+
+/* Animation */
+.bounce-enter-active {
+	animation: bounce-in .5s;
+}
+
+.bounce-leave-active {
+	animation: bounce-in .5s reverse;
+}
+
+@keyframes bounce-in {
+	0% {
+		transform: scale(0);
+	}
+
+	50% {
+		transform: scale(1.5);
+	}
+
+	100% {
+		transform: scale(1);
+	}
+}

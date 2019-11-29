@@ -14,3 +14,24 @@ li{
 	text-decoration: line-through;
 	color:lightblue;
 }
+.formulario{
+	position: relative;
+}
+.span{
+	margin-left: 5px;
+	position: absolute;
+	left: 100%;
+	width: 100px;
+	color: white;
+	padding: 0 2px;
+	text-align: center;
+	transform: scaleX(0);
+}
+.error{
+	background-color: red;
+	transform: scaleX(1);
+}
+.success{
+	transform: scaleX(1);
+	background-color: green;
+}

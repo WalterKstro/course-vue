@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Vuejs</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div id="app">
+		<div class="container">
+			<div class="row">
+				<div class="col-12 mb-3 mt-3">
+					<button class="btn btn-info" @click="condicional=!condicional">Run</button>
+				</div>
+				<!-- Transition -->
+				<transition name="ball">
+					<div class="circle" v-if="condicional"></div>
+				</transition>
+				<!-- Animation -->
+				<transition name="bounce">
+					<p v-if="condicional">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+						Eligendi maxime non alias omnis, quod, aliquam dolorem dolores repellendus rem totam nobis ex ea
+						corrupti mollitia sint excepturi! Magni, nam earum!</p>
+				</transition>
+				<!-- Custom Animate -->
+				<transition name="custom-classes-transition" 
+					enter-active-class="animated fadeInRightBig"
+					leave-active-class="animated bounceOutUp">
+					<p v-if="condicional">hello</p>
+				</transition>
+
+			</div>
+		</div>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="script.js"></script>
+</body>
+
+</html>

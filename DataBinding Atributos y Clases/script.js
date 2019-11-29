@@ -7,11 +7,23 @@ const app = new Vue({
 			{task:'Trabajar en el proyecto',status:false},
 			{task:'Practicar vuejs',status:false},
 			{task:'Practicar Java',status:false},
-		]
+		],
+		isError:false,
+		isSuccess:false,
+		password:''
 	},
 	methods:{
 		markCompletedTask(task){
 			task.status=!task.status
+		},
+		testStatusPassword(password){
+			if(password == '123'){
+				this.isSuccess=!this.isSuccess
+				this.isError=false
+			}else{
+				this.isError=!this.isError
+				this.isSuccess=false
+			}
 		}
 	},
 	computed:{

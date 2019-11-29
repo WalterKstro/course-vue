@@ -25,6 +25,17 @@
 				</div>
 			</div>
 			<div class="row">
+				<div class="col-4"></div>
+				<div class="col-4">
+					<form class="formulario" @submit.prevent="testStatusPassword(password)">
+						<span class="span" :class="{success:isSuccess,error:isError}">Cambio XD</span>
+						<input type="password" name="pass" id="pass" placeholder="Ingrese su contraseña" class="form-control mb-2" v-model="password">
+						<button class="btn btn-success">Log In</button> 
+					</form>
+				</div>
+				<div class="col-4"></div>
+			</div>
+			<div class="row mt-5">
 				<pre>
 					{{$data}}
 				</pre>
