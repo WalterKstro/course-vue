@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Vuejs</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div id="app">
+		<div class="container">
+			<div class="card" v-for="country in countryes">
+				<img :src="country.flag" class="card-img-top" alt="...">
+				<div class="card-body">
+					<h5 class="card-title">{{country.name}}</h5>
+				</div>
+				<div class="card-body">
+					<ul class="list-group">
+						<li><strong>Capital: </strong>{{ country.capital }}</li>
+						<li><strong>Fronteras: </strong>{{ country.borders.length>0 ? country.borders:'Nothing'}}</li>
+						<li><strong>Region: </strong>{{country.region}}</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script src="script.js"></script>
+</body>
+
+</html>

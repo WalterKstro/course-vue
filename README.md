@@ -10,3 +10,5 @@
 * Filtros
 * DataBinding Atributos
 * Transiciones
+* Vue Resource
+* Vue Axios
