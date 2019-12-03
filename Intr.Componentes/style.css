@@ -1,0 +1,23 @@
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.first-component,
+.last-component {
+	display: grid;
+	grid-template-columns: repeat(10, 1fr);
+	grid-auto-rows: auto;
+	gap: 10px;
+
+}
+
+img {
+	width: 80%;
+}
