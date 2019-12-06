@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vuejs</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div id="app">
+		<div class="container">
+			<div class="row">
+				<div class="col-6">
+					<!-- Component Winner -->
+					<ganador :participantes="participantes"></ganador>
+				</div>
+				<div class="col-6"></div>
+			</div>
+		</div>
+	</div>
+	<!-- Tag template html5 -->
+	<template id="ganador">
+		<div>
+			<button @click="selectWinner">Seleccionar Ganador</button>
+			<h3>Ganador: {{winner}}</h3>
+			<h3>Participantes</h3>
+			<ul><li v-for="participante in people">{{participante}}</li></ul>
+		</div>
+	</template>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script src="script.js"></script>
+</body>
+</html>

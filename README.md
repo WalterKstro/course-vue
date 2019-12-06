@@ -13,3 +13,4 @@
 * Vue Resource
 * Vue Axios
 * Introduccion a Componentes
+* Templates
