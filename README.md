@@ -14,3 +14,4 @@
 * Vue Axios
 * Introduccion a Componentes
 * Templates
+* Propiedades de los Componentes(Props)
