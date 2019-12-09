@@ -1,18 +1,30 @@
 // Componente autor
 let autor = {
-	props:['inf','edad'],
-	template:'<h1>{{firstName}} tiene {{edad*2}}</h1>',
-	mounted(){
-		console.log(this.reverseName())
-	},
-	methods:{
-		reverseName(){
-			return this.firstName = this.firstName.split(' ').reverse().join()
+	// props:['inf','edad'],
+
+	// Validation properties of type
+	// Props required and with default value
+	props:{
+		nombre:String,
+		// Prop required
+		edad:{
+			type:Number,
+			required:true
+		},
+		notas:Array,
+		puesto:{
+			type:String,
+			default:'Undefined propertie'
 		}
+
 	},
+	template:'#template-properties',
 	data(){
 		return{
-			firstName:this.inf
+			firstName:this.nombre,
+			age:this.edad,
+			notes:this.notas,
+			job:this.puesto
 		}
 	}
 }
@@ -21,7 +33,10 @@ let autor = {
 const app = new Vue({
 	el:'#app',
 	data:{
-		firstName:'Walter Francisco'
+		name:'Walter Francisco',
+		age:26,
+		notes:[26,56,89,45],
+		job:'Front End Developer'
 	},
 	components:{
 		autor

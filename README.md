@@ -15,3 +15,4 @@
 * Introduccion a Componentes
 * Templates
 * Propiedades de los Componentes(Props)
+* Validacion de propiedades
