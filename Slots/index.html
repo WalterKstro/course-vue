@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Vuejs</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div id="app">
+		<!-- Componente danger -->
+		<alerta color="alert-danger" title="Alerta de Danger" error="Erro de Sintaxis" position="topLeft">
+			<!-- Add slot with name default -->
+			<template v-slot:default>
+				Danger
+			</template>
+			<!-- Add slot with custom name -->
+			<template v-slot:error>
+				Error de Danger
+			</template>
+		</alerta>
+
+		<!-- Componente Success -->
+		<alerta color="alert-success" title="Alerta de Info" error="Erro de Compilacion" position="topRight">
+			<!-- Add slot with name default -->
+			<template v-slot:default>
+				Success
+			</template>
+			<!-- Add slot with custom name -->
+			<template v-slot:error>
+				Felicidades proceso completado
+			</template>
+		</alerta>
+
+		<!-- Componente Info -->
+		<alerta color="alert-info" title="Alerta de Info" error="Erro de Sintaxis" position="bottomLeft">
+			<!-- Add slot with name default -->
+			<template v-slot:default>
+				Info
+			</template>
+			<!-- Add slot with custom name -->
+			<template v-slot:error>
+				Informacion del proceso
+			</template>
+		</alerta>
+
+		<!-- Componente Warning -->
+		<alerta color="alert-warning" title="Alerta de Warning" error="Erro de Sintaxis" position="bottomRight">
+				<!-- Add slot with name default -->
+				<template v-slot:default>
+					Warning
+				</template>
+				<!-- Add slot with custom name -->
+				<template v-slot:error>
+					Parametro fuera de contexto
+				</template>
+			</alerta>
+
+	</div>
+
+	<!-- Main template -->
+	<template id="alerta-show">
+		<div class="alert" :class="[this.position,this.color]" role="alert">
+			<!-- Use slot default -->
+			<h3 class="type-title">
+				<slot>{{this.title}}</slot>
+			</h3>
+
+			<hr>
+			<!-- Slots with named custom -->
+			<h6 class="type-error">
+				<h5>
+					<slot name="error">
+						{{this.error}}
+					</slot>
+				</h5>
+			</h6>
+		</div>
+	</template>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="script.js"></script>
+</body>
+
+</html>
