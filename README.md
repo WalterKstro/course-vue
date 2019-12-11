@@ -17,3 +17,4 @@
 * Propiedades de los Componentes(Props)
 * Validacion de propiedades
 * Slots
+* Scoped slot
