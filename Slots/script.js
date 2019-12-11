@@ -1,3 +1,9 @@
+// Componente scoped slot
+let tareas = {
+	props:['tareas'],
+	template:'#homeworks'
+}
+
 // Componente alert
 let alerta={
 	props:['color','title','error','position'],
@@ -7,9 +13,16 @@ let alerta={
 const app = new Vue({
 	el:'#app',
 	data:{
-	
+		tasks:[
+			{title:'Estudiar Vuejs'},
+			{title:'Aprender Java'},
+			{title:'Estudiar ingles'},
+			{title:'Dormir temprano'},
+			{title:'Llevar computadora'}
+		]
 	},
 	components:{
-		alerta
+		alerta,
+		tareas
 	}
 })

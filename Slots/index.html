@@ -18,7 +18,7 @@
 			</template>
 			<!-- Add slot with custom name -->
 			<template v-slot:error>
-				Error de Danger
+				Peligro en el proceso
 			</template>
 		</alerta>
 
@@ -58,7 +58,16 @@
 				</template>
 			</alerta>
 
+			<!-- Component Scoped Slot Tareas-->
+			<tareas :tareas="tasks">
+				<!-- Uso del scoped slot -->
+				<template v-slot:scoped="slotsProps">
+					<h3>{{ slotsProps.titulo }}</h3>
+				</template>
+			</tareas>
+
 	</div>
+
 
 	<!-- Main template -->
 	<template id="alerta-show">
@@ -79,8 +88,16 @@
 			</h6>
 		</div>
 	</template>
+
+	<!-- Template scoped slot -->
+	<template id="homeworks">
+		<ul class="list-scoped">
+			<!-- Declaracion Scoped slot -->
+			<slot v-for="tarea in tareas" :titulo="tarea.title" name="scoped"></slot>
+		</ul>
+	</template>
+
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	<script src="script.js"></script>
 </body>
-
 </html>
