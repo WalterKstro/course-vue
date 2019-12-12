@@ -10,8 +10,19 @@
 
 <body>
 	<div id="app">
+		<div class="button">
+			<!-- Buttons Custom Events -->
+			<button @click="mostrarDanger=true" class="btn btn-danger">Danger</button>
+			<button @click="mostrarInfo=true" class="btn btn-info">Info</button>
+			<button @click="mostrarWarning=true" class="btn btn-warning">Warning</button>
+			<button @click="mostrarSuccess=true" class="btn btn-success">Success</button>
+
+		</div>
+
 		<!-- Componente danger -->
-		<alerta color="alert-danger" title="Alerta de Danger" error="Erro de Sintaxis" position="topLeft">
+		<!-- El componente alerta hace uso del metodo toogle-show que modifica
+		la propiedad del modelo llamado mostrarDanger-->
+		<alerta @toogle-show="mostrarDanger=false" v-show="mostrarDanger" color="alert-danger" title="Alerta de Danger" error="Erro de Sintaxis" position="topLeft">
 			<!-- Add slot with name default -->
 			<template v-slot:default>
 				Danger
@@ -23,7 +34,7 @@
 		</alerta>
 
 		<!-- Componente Success -->
-		<alerta color="alert-success" title="Alerta de Info" error="Erro de Compilacion" position="topRight">
+		<alerta @toogle-show="mostrarSuccess=false" v-show="mostrarSuccess" color="alert-success" title="Alerta de Info" error="Erro de Compilacion" position="topRight">
 			<!-- Add slot with name default -->
 			<template v-slot:default>
 				Success
@@ -35,7 +46,7 @@
 		</alerta>
 
 		<!-- Componente Info -->
-		<alerta color="alert-info" title="Alerta de Info" error="Erro de Sintaxis" position="bottomLeft">
+		<alerta @toogle-show="mostrarInfo=false" v-show="mostrarInfo" color="alert-info" title="Alerta de Info" error="Erro de Sintaxis" position="bottomLeft">
 			<!-- Add slot with name default -->
 			<template v-slot:default>
 				Info
@@ -47,7 +58,7 @@
 		</alerta>
 
 		<!-- Componente Warning -->
-		<alerta color="alert-warning" title="Alerta de Warning" error="Erro de Sintaxis" position="bottomRight">
+		<alerta @toogle-show="mostrarWarning=false" v-show="mostrarWarning" color="alert-warning" title="Alerta de Warning" error="Erro de Sintaxis" position="bottomRight">
 				<!-- Add slot with name default -->
 				<template v-slot:default>
 					Warning
@@ -59,10 +70,10 @@
 			</alerta>
 
 			<!-- Component Scoped Slot Tareas-->
-			<tareas :tareas="tasks">
+			<tareas :danger="mostrarDanger" :success="mostrarSuccess" :info="mostrarInfo" :warning="mostrarWarning" :tareas="tasks">
 				<!-- Uso del scoped slot -->
 				<template v-slot:scoped="slotsProps">
-					<h3>{{ slotsProps.titulo }}</h3>
+					<h3> 🙉 {{ slotsProps.titulo }}</h3>
 				</template>
 			</tareas>
 
@@ -72,6 +83,9 @@
 	<!-- Main template -->
 	<template id="alerta-show">
 		<div class="alert" :class="[this.position,this.color]" role="alert">
+			<!-- Button Closed Custom Events -->
+			<a href="#" @click="cerrarAlerta">&#215;</a>
+
 			<!-- Use slot default -->
 			<h3 class="type-title">
 				<slot>{{this.title}}</slot>
@@ -91,10 +105,10 @@
 
 	<!-- Template scoped slot -->
 	<template id="homeworks">
-		<ul class="list-scoped">
-			<!-- Declaracion Scoped slot -->
-			<slot v-for="tarea in tareas" :titulo="tarea.title" name="scoped"></slot>
-		</ul>
+			<ul class="list-scoped">
+				<!-- Declaracion Scoped slot -->
+				<slot v-for="tarea in tareas" :titulo="tarea.title" name="scoped"></slot>
+			</ul>
 	</template>
 
 	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>

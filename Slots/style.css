@@ -44,3 +44,11 @@ body{
 	top:50%;
 	transform: translate(-50%,-50%);
 }
+
+
+/* CSS Custom Events */
+.button{
+	width: 500px;
+	margin-right: auto;
+	margin-left: auto;
+}
