@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vuejs</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div id="app" class="container">
+		<div class="row">
+			<div class="col-6">
+				<h3>Listado de Productos</h3>
+				<!-- Componente productos -->
+				<productos :productos="productos"></productos>
+			</div>
+			<div class="col-6">
+				<h3>Cesta de Compra</h3>
+				<!-- Componente cesta -->
+				<cesta></cesta>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Template productos -->
+	<template id="template-productos">
+		<ul>
+			<li v-for="(producto,index) in productos">{{producto.nombre}} - Q.{{producto.precio}}
+				<button @click="agregarProducto(producto.precio,producto)" class="btn btn-sm">+</button>
+				<!-- <button @click="removerProducto(producto.precio,producto,index)" class="btn btn-sm">-</button> -->
+			</li>
+		</ul>
+	</template>
+
+	<!-- Template cesta -->
+	<template id="template-cesta">
+		<div class="cesta">
+			<p>Total: <strong>Q. {{total}}</strong></p>
+			<p>Productos: <strong>{{productos.length}}</strong></p>
+			<ol>
+				<li v-for="(producto,index) in productos">{{producto.nombre}}
+					<button @click="removerProducto(producto.precio,index)" class="btn btn-sm">-</button>
+				</li>
+			</ol>
+		</div>
+	</template>
+
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="script.js"></script>
+</body>
+</html>
