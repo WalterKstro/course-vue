@@ -19,3 +19,4 @@
 * Slots
 * Scoped slot
 * Custom Events(Nos proporciona la capacidad de hacer modificaciones a propiedades del modelo desde algun componente)
+* Anidacion de componentes

@@ -36,7 +36,7 @@
 	<!-- Template cesta -->
 	<template id="template-cesta">
 		<div class="cesta">
-			<p>Total: <strong>Q. {{total}}</strong></p>
+			<p>Total: <strong>Q. {{total.toFixed(2)}}</strong></p>
 			<p>Productos: <strong>{{productos.length}}</strong></p>
 			<ol>
 				<li v-for="(producto,index) in productos">{{producto.nombre}}

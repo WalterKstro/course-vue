@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vuejs</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div id="app">
+		<!-- Instancia del componente contenedor -->
+		<template_container :tareas="tareas"></template_container>
+	</div>
+
+	<!-- Plantilla del componente contenedor -->
+	<template id="template_container">
+		<!-- Instancia del componente listado de tareas 
+		dentro de la plantilla del componente contenedor-->
+		<div class="container">
+			<ul>
+				<listado_tareas v-for="(tarea,key) in tareas" :key="key" :tarea="tarea"></listado_tareas>
+			</ul>
+		</div>
+	</template>
+
+	<!-- Plantilla del componente listado de tareas-->
+	<template id="listado-tarea">
+		<li>{{tarea}}</li>
+	</template>
+
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="script.js"></script>
+</body>
+</html>
