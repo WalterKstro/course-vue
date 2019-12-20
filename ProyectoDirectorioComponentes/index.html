@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Vuejs</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div id="app">
+		<div class="container">
+			<!-- Instancia del componente input-search -->
+			<form_search></form_search>
+		</div>
+	</div>
+
+
+
+
+	<!-- Template inputSearch -->
+	<template id="input-search">
+		<div class="input-search">
+			<form class="form">
+				<input class="form__input" type="search" name="search" id="search"
+					placeholder="Ingrese el nombre del empleado" v-model="employe">
+			</form>
+			<div class="card-people" v-if="filterByName.length>0">
+				<!-- Instancia del componente cards -->
+				<cards v-for="(people,key) in filterByName" :key="key" :name="people.name"
+					:email="people.email" :photo="people.photo">
+				</cards>
+			</div>
+			<div class="filter-none" v-else>
+				<h3 class="filter-none__alert">No hay resultados de busqueda</h3>
+			</div>
+		</div>
+	</template>
+
+
+	<!-- Template Cards -->
+	<template id="card-main">
+			<div class="card-identification">
+				<div class="photo">
+					<img :src="photo" alt="">
+				</div>
+				<div class="info">
+					<p class="info__name"><span>Name: </span>{{name}}</p>
+					<p class="info__email"><span>Email: </span>{{email}}</p>
+				</div>
+			</div>
+	</template>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<script src="script.js"></script>
+</body>
+
+</html>
