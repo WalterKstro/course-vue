@@ -21,3 +21,5 @@
 * Custom Events(Nos proporciona la capacidad de hacer modificaciones a propiedades del modelo desde algun componente)
 * Anidacion de componentes
 * Componentes Dinamicos (Nos permite desplegar un unico componente en un unico punto de montaje)
+* Vue CLI
+* Single File Components
