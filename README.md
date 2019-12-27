@@ -23,3 +23,4 @@
 * Componentes Dinamicos (Nos permite desplegar un unico componente en un unico punto de montaje)
 * Vue CLI
 * Single File Components
+* Function Render = Permite la creacion de elementos de forma dinamica utilizando slots
