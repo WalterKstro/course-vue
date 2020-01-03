@@ -24,3 +24,4 @@
 * Vue CLI
 * Single File Components
 * Function Render = Permite la creacion de elementos de forma dinamica utilizando slots
+* Vuex
