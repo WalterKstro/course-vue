@@ -27,3 +27,4 @@
 * Vuex
 * Vuex State - mapState 
 * Vuex Getters - mapGetters
+* Vuex Mutations - mapMutations
