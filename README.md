@@ -29,3 +29,4 @@
 * Vuex Getters - mapGetters
 * Vuex Mutations - mapMutations
 * Vuex Actions - mapActions
+* Vuex Modules
