@@ -30,3 +30,4 @@
 * Vuex Mutations - mapMutations
 * Vuex Actions - mapActions
 * Vuex Modules
+* Vue Routter
