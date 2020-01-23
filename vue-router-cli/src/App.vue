@@ -10,6 +10,7 @@
           <!-- Podemos activar clases personalizadas con active-class -->
           <router-link exact to="/" active-class="active">Home</router-link>
           <router-link exact to="/about" active-class="active">About Us</router-link>
+          <router-link exact to="/usuario/50" active-class="active">Users</router-link>
         </nav>
       </header>
       <router-view></router-view>
