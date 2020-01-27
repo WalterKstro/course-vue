@@ -11,12 +11,13 @@ Vue.use(VueRouter)
 
 const routes = [
    { path: '/', component: Inicio },
-   { path: '/equipo/:id', component: Equipo,
+   // Propiedad name para nombrar a las rutas
+   { path: '/team/:id', component: Equipo,
       children : [
-         { path:'', component: Usuario, 
+         { path:'', name: 'equipo', component: Usuario, 
             children : [
-               {path: 'bio', component: Bio},
-               {path: 'skill', component: Skills}
+               {path: 'bio', name:'bio', component: Bio},
+               {path: 'skill', name:'skill', component: Skills}
             ]
          }
       ]

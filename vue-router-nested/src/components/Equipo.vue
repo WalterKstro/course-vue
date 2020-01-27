@@ -6,8 +6,13 @@
       veritatis optio, atque accusamus ullam quo in, repudiandae ratione a vel numquam voluptatibus totam eligendi 
       repellendus.</p>
 
-      <router-link :to="'/equipo/'+ id + '/bio'">Bio</router-link>
-      <router-link :to="'/equipo/'+ id + '/skill'">Skills</router-link>
+<!-- Si utilizar Router Named -->
+      <!-- <router-link :to="'/equipo/'+ id + '/bio'">Bio</router-link>
+      <router-link :to="'/equipo/'+ id + '/skill'">Skills</router-link> -->
+
+      <!-- Utilizando Router Named -->
+      <router-link :to="{ name: 'bio'}">Bio</router-link>
+      <router-link :to="{ name: 'skill'}">Skills</router-link>
 
       <router-view></router-view>
   </div>

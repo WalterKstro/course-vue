@@ -31,3 +31,6 @@
 * Vuex Actions - mapActions
 * Vuex Modules
 * Vue Routter
+* Vue Router Segment Dinamic
+* Vue Router Nested Router
+* Vue Router Named Router
