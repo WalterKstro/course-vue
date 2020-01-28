@@ -13,12 +13,13 @@ const routes = [
    { path: '/', component: Inicio },
    // Propiedad name para nombrar a las rutas
    { path: '/team/:id', component: Equipo,
+   // Sin utilizar los View Named
       children : [
-         { path:'', name: 'equipo', component: Usuario, 
-            children : [
-               {path: 'bio', name:'bio', component: Bio},
-               {path: 'skill', name:'skill', component: Skills}
-            ]
+         { path:'', name: 'equipo', components: { default: Usuario, bio: Bio, skill: Skills}, 
+            // children : [
+            //    {path: 'bio', name:'bio', component: Bio},
+            //    {path: 'skill', name:'skill', component: Skills}
+            // ]
          }
       ]
    }

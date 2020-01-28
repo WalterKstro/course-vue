@@ -34,3 +34,4 @@
 * Vue Router Segment Dinamic
 * Vue Router Nested Router
 * Vue Router Named Router
+* Vue Router Named View
