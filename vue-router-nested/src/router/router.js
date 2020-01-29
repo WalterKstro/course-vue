@@ -5,12 +5,14 @@ import Usuario from '../components/Usuario'
 import Inicio from '../components/Home'
 import Skills from '../components/UsuarioSkills'
 import Equipo from '../components/Equipo'
+import Contacto from '../components/Contacto'
 
 
 Vue.use(VueRouter)
 
 const routes = [
    { path: '/', component: Inicio },
+   { path: '/about', alias:'/inicio', redirect:'/', component: Inicio },
    // Propiedad name para nombrar a las rutas
    { path: '/team/:id', component: Equipo,
    // Sin utilizar los View Named
@@ -22,7 +24,10 @@ const routes = [
             // ]
          }
       ]
-   }
+   },
+   // Envio de props desde router vue, sin la nececidad de crear segmetnos dinamicos en el 
+   // path del router
+   { path: '/contacto', name : 'contacto', component: Contacto, props: { estado : true } }
  ]
 
 

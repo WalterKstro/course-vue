@@ -1,6 +1,7 @@
 <template>
    <div>
       <h3>Home</h3>
+      <router-link :to="{ name: 'contacto'}">Cotnacto</router-link>
       <!-- Sin utilizar Router Named -->
     <!-- <router-link :to="'/equipo/' + id" exact>Equipo</router-link> -->
     <!-- Utilizando Router Named -->
