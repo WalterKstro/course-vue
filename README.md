@@ -35,3 +35,5 @@
 * Vue Router Nested Router
 * Vue Router Named Router
 * Vue Router Named View
+* Vue Router Props
+* Vue Router Fallback Error 404

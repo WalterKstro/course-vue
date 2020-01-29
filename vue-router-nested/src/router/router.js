@@ -6,6 +6,7 @@ import Inicio from '../components/Home'
 import Skills from '../components/UsuarioSkills'
 import Equipo from '../components/Equipo'
 import Contacto from '../components/Contacto'
+import Error from '../components/Error404'
 
 
 Vue.use(VueRouter)
@@ -27,11 +28,14 @@ const routes = [
    },
    // Envio de props desde router vue, sin la nececidad de crear segmetnos dinamicos en el 
    // path del router
-   { path: '/contacto', name : 'contacto', component: Contacto, props: { estado : true } }
+   { path: '/contacto', name : 'contacto', component: Contacto, props: { estado : true } },
+   // Modo history - page not found error 404 
+   { path: '*', name : 'error', component: Error }
  ]
 
 
  export const router = new VueRouter({
+   mode: 'history',
    routes // short for `routes: routes`
  })
 
