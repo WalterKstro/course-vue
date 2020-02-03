@@ -37,4 +37,5 @@
 * Vue Router Named View
 * Vue Router Props
 * Vue Router Fallback Error 404
-* Vue Router Global Before Guards
+* Vue Router Global Before Guards - Aplicado a todas las rutas
+* Vue Router Per-Route Guard - Aplicado a una ruta especifica

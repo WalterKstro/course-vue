@@ -18,6 +18,9 @@ const routes = [
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue'),
+    beforeEnter: (to, from, next) => {
+      next(store.state.auth);
+    },
   },
 ];
 
@@ -27,8 +30,11 @@ const router = new VueRouter({
   routes,
 });
 
+// Los Global Guards se aplican a todas las rutas de la aplicacion
+// permitiendo el acceso o no a ciertas partes de la aplicacion con el metodo
+// next()
 router.beforeEach((to, from, next) => {
-  next(store.state.auth);
+  next();
 });
 
 export default router;
