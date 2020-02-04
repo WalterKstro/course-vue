@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import Blog from '../views/Blog.vue';
 import Home from '../views/Home.vue';
 import store from '../store/store';
 
@@ -21,6 +22,10 @@ const routes = [
     beforeEnter: (to, from, next) => {
       next(store.state.auth);
     },
+  },
+  {
+    path: '/blog/:id',
+    component: Blog,
   },
 ];
 
