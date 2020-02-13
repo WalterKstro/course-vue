@@ -39,3 +39,4 @@
 * Vue Router Fallback Error 404
 * Vue Router Global Before Guards - Aplicado a todas las rutas
 * Vue Router Per-Route Guard - Aplicado a una ruta especifica
+* Custom Directive
