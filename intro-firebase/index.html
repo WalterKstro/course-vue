@@ -25,6 +25,7 @@
             <!-- evento  updateMessage recibe informacion del evento que lo invoca y la llave hash
             que identifica al objeto en firebase-->
             <strong>{{ value.username }}</strong> : <span contenteditable="true" @blur="updateMessage($event, index)"> {{ value.message }} </span>
+            <button type="button" class="btn btn-sm" @click="deleteMessage(index)">❌</button>
          </li>
       </ul>
    </div>

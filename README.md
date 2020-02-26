@@ -45,3 +45,4 @@
 * on() | once() Firebase (escuchar cambios | escuchar una unica vez)
 * val() (obtiene un snapshot de la informacion de la base de datos)
 * update() Firebase (actualiza un elemento determinado)
+* remove() Firebase (Elimina un objeto determinado deacuerdo a su llave hash)

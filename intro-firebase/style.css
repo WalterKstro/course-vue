@@ -19,7 +19,9 @@ body{margin: 10px;}
 textarea{
    margin: 10px 0;
 }
-
+ul,li{
+   list-style-type: none;
+}
 span:focus{
    border: 1px solid #ddd;
    padding: 5px;
