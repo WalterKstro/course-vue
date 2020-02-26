@@ -40,3 +40,8 @@
 * Vue Router Global Before Guards - Aplicado a todas las rutas
 * Vue Router Per-Route Guard - Aplicado a una ruta especifica
 * Custom Directive
+* set() Firebase (insertar eliminando todo)
+* push() Firebase (insertar adjuntando)
+* on() | once() Firebase (escuchar cambios | escuchar una unica vez)
+* val() (obtiene un snapshot de la informacion de la base de datos)
+* update() Firebase (actualiza un elemento determinado)

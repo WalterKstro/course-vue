@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Firebase & Vue.js</title>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+   <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+   <div id="app" class="app">
+
+      <form action="#" class="form" @submit.prevent="sendMessage">
+         <input type="text" placeholder="Ingrese su nombre de usuario" v-model="user" class="username form-control">
+         <textarea name="message" id="message" cols="30" rows="10" v-model="message" placeholder="Ingrese su mensaje" class="message form-control"></textarea>
+         <input type="submit" value="Enviar" id="submit" class="btn btn-primary">
+      </form>
+      
+      <ul>
+         <!-- Directiva v-for que recorre los mensajes que vienen de firebase -->
+         <li v-for="(value, index) in messages">
+            <!-- evento  updateMessage recibe informacion del evento que lo invoca y la llave hash
+            que identifica al objeto en firebase-->
+            <strong>{{ value.username }}</strong> : <span contenteditable="true" @blur="updateMessage($event, index)"> {{ value.message }} </span>
+         </li>
+      </ul>
+   </div>
+
+
+
+   <!-- The core Firebase JS SDK is always required and must be listed first -->
+   <script src="https://www.gstatic.com/firebasejs/7.9.0/firebase-app.js"></script>
+
+   <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+   <script src="https://www.gstatic.com/firebasejs/7.9.0/firebase-analytics.js"></script>
+
+   <!-- The script for database realtime of firebase -->
+   <script src="https://www.gstatic.com/firebasejs/7.9.0/firebase-database.js"></script>
+
+   <!-- development version, includes helpful console warnings -->
+   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+   <!-- <script src="insertFirebase.js"></script> -->
+   <!-- <script src="readFirebase.js"></script> -->
+   <script src="updateFirebse.js"></script>
+</body>
+
+</html>
