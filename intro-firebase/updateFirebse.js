@@ -53,10 +53,6 @@ const vm = new Vue({
          database.ref('chats/' + index).update({
             message : event.target.textContent
          })
-      },
-      // index es la llave hash del objeto a eliminar
-      deleteMessage( index ) {
-         database.ref('chats/' + index).remove()
       }
    }
 })
